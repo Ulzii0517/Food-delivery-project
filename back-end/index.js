@@ -1,10 +1,12 @@
 import express from "express";
+import cors from "cors";
 
 const server = express();
 const PORT = 8000;
 
+server.use(cors());
 server.get("/", (request, response) => {
-  response.send("Hello world");
+  response.send(["John", "Paul"]);
 });
 
 server.listen(PORT, () => {
